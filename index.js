@@ -6,8 +6,9 @@ const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const port = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: ['http://localhost:5173',
- 'https://assignment11-65825.web.app'],
+  origin: [//'http://localhost:5173',
+ 'https://assignment11-65825.web.app',
+'https://assignment11-65825.firebaseapp.com/'],
         credentials: true,
 }))
 app.use(express.json());
@@ -139,9 +140,6 @@ async function run() {
   })
   
 
-
-
-  
     //await client.connect();
     //await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
